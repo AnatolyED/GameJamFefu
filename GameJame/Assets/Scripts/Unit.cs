@@ -83,6 +83,13 @@ public abstract class Unit : MonoBehaviour, IDamageble
 
     public virtual void Attack()
     {
+        int _points = 0; //  оличество очков хода используемых дл€ операции
+        float _multiplier = Mathf.Pow(DamageMultiplier, _points);
+        float _ultimateDamage = BaseDamage * _multiplier;
+    }
+
+    public virtual void Protection()
+    {
 
     }
 }
