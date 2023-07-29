@@ -2,13 +2,21 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour, IDamageble
 {
-    [Header("Параметры юнита")]
-    [SerializeField]private int _health;
+    [Header("Очки хода")]
+    [SerializeField] private int _motionPoints;
+    [Space,Header("Параметры здоровья")]
+    [SerializeField] private float _health;
+    [Space,Header("Параметры атаки")]
+    [SerializeField] private int _baseDamage;
+    [SerializeField] private float _damageMultiplier;
+    [SerializeField] private int _range;
+    [Space,Header("Параметры защиты")]
+    [SerializeField] private float _baseArmor;
+    [SerializeField] private float _armorMultiplier;
 
-    [Header("Настройки атаки")]
-    [SerializeField] private int _attakDamage;
+
     //Свойства
-    public int Health
+    public float Health
     {
         get { return _health; }
         set 
@@ -22,7 +30,7 @@ public abstract class Unit : MonoBehaviour, IDamageble
     }
 
     //Получение урона и смерть
-    public virtual void TakingDamage(int damage)
+    public virtual void TakingDamage(float damage)
     {
         Health -= damage;
     }

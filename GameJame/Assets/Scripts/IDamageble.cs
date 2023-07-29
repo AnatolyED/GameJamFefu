@@ -1,6 +1,6 @@
 public interface IDamageble
 {
-    public int Health { get; set; }
-    public void TakingDamage(int damage);
+    public float Health { get; set; }
+    public void TakingDamage(float damage);
     public void Death();
 }
