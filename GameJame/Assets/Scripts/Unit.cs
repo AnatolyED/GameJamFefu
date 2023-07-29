@@ -2,15 +2,15 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour, IDamageble
 {
-    [Header("Очки хода")]
+    [Header("Move Points")]
     [SerializeField] private int _motionPoints;
-    [Space,Header("Параметры здоровья")]
+    [Space,Header("Health Parameters")]
     [SerializeField] private float _health;
-    [Space,Header("Параметры атаки")]
+    [Space,Header("ПAttack Parameters")]
     [SerializeField] private int _baseDamage;
     [SerializeField] private float _damageMultiplier;
     [SerializeField] private int _range;
-    [Space,Header("Параметры защиты")]
+    [Space,Header("Protection parameters")]
     [SerializeField] private float _baseArmor;
     [SerializeField] private float _armorMultiplier;
 
