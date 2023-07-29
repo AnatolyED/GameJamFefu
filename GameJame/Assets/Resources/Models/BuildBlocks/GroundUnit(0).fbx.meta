@@ -3,7 +3,27 @@ guid: ad450ed606c15974794812b7c46c09e1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crystals
+    second: {fileID: 2100000, guid: da2fac2d4ab4ca342b0092f8eb4800a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crystals2
+    second: {fileID: 2100000, guid: 1dfb4f395cbdbab4d8d2320f4d957b8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crystals3
+    second: {fileID: 2100000, guid: cf9105dc8ee5fd341b2b0fa7ce2b9905, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ground
+    second: {fileID: 2100000, guid: 9d256e95a77307b4a9bf0268a5444a91, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

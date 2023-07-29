@@ -3,7 +3,37 @@ guid: 8b879c5b22cb6214383066d80e064647
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stvoll
+    second: {fileID: 2100000, guid: 57b3d29f854c11b43b51c86f2749cc61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crystals2
+    second: {fileID: 2100000, guid: 15d1a94298a23f14681e5ef5ccc1a212, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ground
+    second: {fileID: 2100000, guid: 54d1804e936e1304e9d679b28d82d46c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ground2
+    second: {fileID: 2100000, guid: ae6f4d5b370fdd942b395543622ca659, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tree1
+    second: {fileID: 2100000, guid: 98064d916698162438e338d464fb9caf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water
+    second: {fileID: 2100000, guid: cc25797f45cd5a34e99606d88a934aca, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
