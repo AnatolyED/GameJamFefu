@@ -6,7 +6,7 @@ public abstract class Unit : MonoBehaviour, IDamageble
     [SerializeField] private int _motionPoints;
     [Space,Header("Health Parameters")]
     [SerializeField] private float _health;
-    [Space,Header("ÏAttack Parameters")]
+    [Space,Header("Attack Parameters")]
     [SerializeField] private int _baseDamage;
     [SerializeField] private float _damageMultiplier;
     [SerializeField] private int _range;
