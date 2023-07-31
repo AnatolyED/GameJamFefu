@@ -4,7 +4,7 @@ public abstract class Unit : MonoBehaviour, IDamageble
 {
     [Header("Move Points")]
     [SerializeField, Tooltip("Значение кол-ва очков хода")] private int _motionPoints;
-
+    [SerializeField, Tooltip("Кол-во клеток хода за единицу очков действия")] private int _speed;
     [Space,Header("Health Parameters")]
     [SerializeField,Tooltip("Здоровье юнита")] private float _health;
     
