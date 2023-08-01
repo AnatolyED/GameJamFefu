@@ -20,6 +20,8 @@ public abstract class Unit : MonoBehaviour, IDamageble
     [Space,Header("Special parameters")]
     [SerializeField] private int _crit;
 
+    [Space, Header("Information")]
+    [SerializeField] private string _description;
 
     //Свойства
     public int MotionPoints
