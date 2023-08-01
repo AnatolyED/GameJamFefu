@@ -86,3 +86,4 @@ MonoBehaviour:
   _baseArmor: 60
   _armorMultiplier: 1
   _crit: 0
+  _description: 

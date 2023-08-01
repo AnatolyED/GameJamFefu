@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField, Header("Map configs")]
     private GameObject _gameMap;
-    [SerializeField, Tooltip("Список координат объектов карты")]
+    [SerializeField, Tooltip("Список координат объектов для передвижения по карте")]
     private List<Transform> _mapObjectsTransform = new List<Transform>();
-    [SerializeField, Tooltip("Список префабов для генерации")]
+    [SerializeField, Tooltip("Список координат объектов для генерации блокирующих движение")]
+    private List<Transform> _mapStopObjectsTransform = new List<Transform>(8);
+    [SerializeField, Tooltip("Список префабов для генерации блоков передвижения")]
     private List<GameObject> _prefabsBuildMap = new List<GameObject>();
-    [SerializeField, Tooltip("Углы поворота для генерации")]
+    [SerializeField, Tooltip("Список префабов для генерации блокирующих блоков")]
+    private List<GameObject> _prefabStopBuildMap = new List<GameObject>();
+    [SerializeField, Tooltip("Углы поворота для генерации обычных блоков")]
     private List<Vector3> _deegresOfRotation = new List<Vector3>(7) 
     {
         new Vector3(-90, 0, 0),
@@ -21,20 +26,57 @@ public class MapGenerator : MonoBehaviour
         new Vector3(-90, 300, 0),
         new Vector3(-90, 360, 0)
     };
+    [SerializeField, Tooltip("Углы поворота для генерации блокирующих блоков")]
+    private List<Vector3> _deegresOfRotationStop = new List<Vector3>()
+    {
+        new Vector3(-90, 30, 0),
+        new Vector3(-90, 90, 0),
+        new Vector3(-90, 150, 0),
+        new Vector3(-90, 210, 0),
+        new Vector3(-90, 270, 0),
+        new Vector3(-90, 330, 0)
+    };
     private void Start()
     {
         Creator();
     }
+    private void Awake()
+    {
+        CreatorStopBlocks();
+    }
 
     private void Creator()
     {
-        for(int i = 0; i < _mapObjectsTransform.Count;i++)
+        int _randomPrefabNum;
+        int _randomRotation;
+        for (int i = 0; i < _mapObjectsTransform.Count;i++)
         {
-            int _randomPrefabNum = Random.Range(0, _prefabsBuildMap.Count - 1);
-            int _randomRotation = Random.Range(0, _deegresOfRotation.Count - 1);
-            GameObject _buildBlock = Instantiate(_prefabsBuildMap[_randomPrefabNum], _mapObjectsTransform[i].position,Quaternion.Euler(_deegresOfRotation[_randomRotation]),_gameMap.transform);
-            Destroy(_mapObjectsTransform[i].gameObject);
+            _randomPrefabNum = Random.Range(0, _prefabsBuildMap.Count);
+            _randomRotation = Random.Range(0, _deegresOfRotation.Count);
 
+            GameObject _buildBlock = Instantiate(_prefabsBuildMap[_randomPrefabNum], _mapObjectsTransform[i].position, Quaternion.Euler(_deegresOfRotation[_randomRotation]), _gameMap.transform);
+            Destroy(_mapObjectsTransform[i].gameObject);
+        }
+    }
+
+    private void CreatorStopBlocks()
+    {
+        int _randomStopPrefab;
+        int _randomRotationStop;
+        for (int i = 0; i < _mapStopObjectsTransform.Count; i++) {
+            _randomStopPrefab = Random.Range(0, _prefabStopBuildMap.Count);
+            _randomRotationStop = Random.Range(0, _deegresOfRotationStop.Count);
+
+            if (_randomStopPrefab == 1 || _randomStopPrefab == 2)
+            {
+                GameObject _buildStopBlock = Instantiate(_prefabStopBuildMap[_randomStopPrefab], new Vector3(_mapStopObjectsTransform[i].position.x, _mapStopObjectsTransform[i].position.y - 0.78f, _mapStopObjectsTransform[i].position.z), Quaternion.Euler(_deegresOfRotationStop[_randomRotationStop]), _gameMap.transform);
+                Destroy(_mapStopObjectsTransform[i].gameObject);
+            }
+            else if (_randomStopPrefab == 3)
+            {
+                GameObject _buildStopBlock = Instantiate(_prefabStopBuildMap[_randomStopPrefab], new Vector3(_mapStopObjectsTransform[i].position.x, _mapStopObjectsTransform[i].position.y, _mapStopObjectsTransform[i].position.z), Quaternion.Euler(_deegresOfRotationStop[_randomRotationStop]), _gameMap.transform);
+                Destroy(_mapStopObjectsTransform[i].gameObject);
+            }
         }
     }
 }
