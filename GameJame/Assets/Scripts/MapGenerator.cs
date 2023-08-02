@@ -64,7 +64,7 @@ public class MapGenerator : MonoBehaviour
         int _randomStopPrefab;
         int _randomRotationStop;
         for (int i = 0; i < _mapStopObjectsTransform.Count; i++) {
-            _randomStopPrefab = Random.Range(0, _prefabStopBuildMap.Count);
+            _randomStopPrefab = BlockStopRandomSelection();
             _randomRotationStop = Random.Range(0, _deegresOfRotationStop.Count);
 
             if (_randomStopPrefab == 1 || _randomStopPrefab == 2)
@@ -77,6 +77,27 @@ public class MapGenerator : MonoBehaviour
                 GameObject _buildStopBlock = Instantiate(_prefabStopBuildMap[_randomStopPrefab], new Vector3(_mapStopObjectsTransform[i].position.x, _mapStopObjectsTransform[i].position.y, _mapStopObjectsTransform[i].position.z), Quaternion.Euler(_deegresOfRotationStop[_randomRotationStop]), _gameMap.transform);
                 Destroy(_mapStopObjectsTransform[i].gameObject);
             }
+        }
+    }
+
+    private int BlockStopRandomSelection()
+    {
+        int _randomNum = Random.Range(0, 100);
+        if (_randomNum < 25)
+        {
+            return 0;
+        }
+        else if (_randomNum >= 25 && _randomNum < 50)
+        {
+            return 1;
+        }
+        else if (_randomNum >= 50 && _randomNum < 75)
+        {
+            return 2;
+        }
+        else
+        {
+            return 3;
         }
     }
 }
