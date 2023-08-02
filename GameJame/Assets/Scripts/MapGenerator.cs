@@ -64,7 +64,7 @@ public class MapGenerator : MonoBehaviour
         int _randomStopPrefab;
         int _randomRotationStop;
         for (int i = 0; i < _mapStopObjectsTransform.Count; i++) {
-            _randomStopPrefab = BlockStopRandomSelection();
+            _randomStopPrefab = BlockRandomSelection(true);
             _randomRotationStop = Random.Range(0, _deegresOfRotationStop.Count);
 
             if (_randomStopPrefab == 1 || _randomStopPrefab == 2)
@@ -80,24 +80,69 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    private int BlockStopRandomSelection()
+    private int BlockRandomSelection(bool _stopBlocks)
     {
         int _randomNum = Random.Range(0, 100);
-        if (_randomNum < 25)
-        {
-            return 0;
-        }
-        else if (_randomNum >= 25 && _randomNum < 50)
-        {
-            return 1;
-        }
-        else if (_randomNum >= 50 && _randomNum < 75)
-        {
-            return 2;
+        if (_stopBlocks) {
+            if (_randomNum < 25)
+            {
+                return 0;
+            }
+            else if (_randomNum >= 25 && _randomNum < 50)
+            {
+                return 1;
+            }
+            else if (_randomNum >= 50 && _randomNum < 75)
+            {
+                return 2;
+            }
+            else
+            {
+                return 3;
+            }
         }
         else
         {
-            return 3;
+            if(_randomNum < 30)
+            {
+                return 0;
+            }
+            else if (_randomNum >= 30 && _randomNum < 60)
+            {
+                return 1;
+            }
+            else if(_randomNum >= 60 && _randomNum < 65)
+            {
+                return 2;
+            }
+            else if (_randomNum >= 65 && _randomNum < 70)
+            {
+                return 3;
+            }
+            else if (_randomNum >= 70 && _randomNum < 75)
+            {
+                return 4;
+            }
+            else if (_randomNum >= 75 && _randomNum < 80)
+            {
+                return 5;
+            }
+            else if (_randomNum >= 80 && _randomNum < 85)
+            {
+                return 6;
+            }
+            else if (_randomNum >= 85 && _randomNum < 90)
+            {
+                return 7;
+            }
+            else if (_randomNum >= 90 && _randomNum < 95)
+            {
+                return 8;
+            }
+            else
+            {
+                return 9;
+            }
         }
     }
 }
