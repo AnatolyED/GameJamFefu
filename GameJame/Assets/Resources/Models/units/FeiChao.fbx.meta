@@ -3,7 +3,47 @@ guid: e6da4058640cfe5459d66c47d3ad9c0e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hat
+    second: {fileID: 2100000, guid: e7c88f339aa0fa14a9e643d2e1545422, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balls
+    second: {fileID: 2100000, guid: 9d220ba00bcba134cad3d80e7bb0fd24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: belts
+    second: {fileID: 2100000, guid: a653a410e6538424bafb5ebb86ca0a6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blade
+    second: {fileID: 2100000, guid: 77e2ce6f3c4468349a338737a0ea7f7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blade2
+    second: {fileID: 2100000, guid: 0fad732c72acd804bb05415505238ca6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: skin
+    second: {fileID: 2100000, guid: 0a43b975a53575f4baf6e6d81876ad78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: slippers&staff
+    second: {fileID: 2100000, guid: 3e2a697e1e8160b459bdbb53a1918f08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vest&trousers
+    second: {fileID: 2100000, guid: 45c83535201f1e544be46778bdfe80af, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
