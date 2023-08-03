@@ -92,6 +92,15 @@ public abstract class Unit : MonoBehaviour, IDamageble
 
     public virtual void Attack()
     {
+        _anim.SetTrigger("AttackTrigger");
+        int _points = 0; //  оличество очков хода используемых дл€ операции
+        float _multiplier = Mathf.Pow(DamageMultiplier, _points);
+        float _ultimateDamage = BaseDamage * _multiplier;
+    }
+
+    public virtual void RangeAttack()
+    {
+        _anim.SetTrigger("RangeAttackTrigger");
         int _points = 0; //  оличество очков хода используемых дл€ операции
         float _multiplier = Mathf.Pow(DamageMultiplier, _points);
         float _ultimateDamage = BaseDamage * _multiplier;
@@ -99,8 +108,19 @@ public abstract class Unit : MonoBehaviour, IDamageble
 
     public virtual void Protection()
     {
+        _anim.SetTrigger("BlockTrigger");
         int _points = 0; //  оличество очков хода используемых дл€ операции
         float _multiplier = Mathf.Pow(DamageMultiplier, _points);
         float _ultimateProtection = BaseArmor * _multiplier;
+    }
+
+    public virtual void Skill()
+    {
+        _anim.SetTrigger("SkillTrigger");
+    }
+
+    public virtual void Walk()
+    {
+        _anim.SetTrigger("WalkTrigger");
     }
 }
