@@ -23,7 +23,14 @@ public abstract class Unit : MonoBehaviour, IDamageble
     [Space, Header("Information")]
     [SerializeField] private string _description;
 
-    //Свойства
+
+    //Контроллер анимации
+    Animator _anim;
+
+    private void Start()
+    {
+        _anim = GetComponent<Animator>();
+    }
     public int MotionPoints
     {
         get { return _motionPoints; }
@@ -40,7 +47,7 @@ public abstract class Unit : MonoBehaviour, IDamageble
             _health = value;
             if (_health <= 0)
             {
-                Death();
+                _anim.SetTrigger("DeathTrigger");
             }
         }
     }

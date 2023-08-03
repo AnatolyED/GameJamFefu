@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class FeiChao : Unit
 {
-    
+    public override void Death()
+    {
+        base.Death();
+    }
 }

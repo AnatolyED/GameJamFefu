@@ -69,12 +69,25 @@ public class MapGenerator : MonoBehaviour
 
             if (_randomStopPrefab == 1 || _randomStopPrefab == 2)
             {
-                GameObject _buildStopBlock = Instantiate(_prefabStopBuildMap[_randomStopPrefab], new Vector3(_mapStopObjectsTransform[i].position.x, _mapStopObjectsTransform[i].position.y - 0.78f, _mapStopObjectsTransform[i].position.z), Quaternion.Euler(_deegresOfRotationStop[_randomRotationStop]), _gameMap.transform);
+                GameObject _buildStopBlock = Instantiate(
+                    _prefabStopBuildMap[_randomStopPrefab],
+                    new Vector3(_mapStopObjectsTransform[i].position.x,
+                    _mapStopObjectsTransform[i].position.y - 0.78f,
+                    _mapStopObjectsTransform[i].position.z),
+                    Quaternion.Euler(_deegresOfRotationStop[_randomRotationStop]),
+                    _gameMap.transform);
+
                 Destroy(_mapStopObjectsTransform[i].gameObject);
             }
             else if (_randomStopPrefab == 3)
             {
-                GameObject _buildStopBlock = Instantiate(_prefabStopBuildMap[_randomStopPrefab], new Vector3(_mapStopObjectsTransform[i].position.x, _mapStopObjectsTransform[i].position.y, _mapStopObjectsTransform[i].position.z), Quaternion.Euler(_deegresOfRotationStop[_randomRotationStop]), _gameMap.transform);
+                GameObject _buildStopBlock = Instantiate(_prefabStopBuildMap[_randomStopPrefab],
+                    new Vector3(_mapStopObjectsTransform[i].position.x,
+                    _mapStopObjectsTransform[i].position.y,
+                    _mapStopObjectsTransform[i].position.z),
+                    Quaternion.Euler(_deegresOfRotationStop[_randomRotationStop]),
+                    _gameMap.transform);
+
                 Destroy(_mapStopObjectsTransform[i].gameObject);
             }
         }
@@ -103,37 +116,25 @@ public class MapGenerator : MonoBehaviour
         }
         else
         {
-            if (_randomNum < 10)
+            if ((_randomNum < 10) || (_randomNum >= 30 && _randomNum < 40) || (_randomNum >= 55 && _randomNum < 65))
             {
                 return 0;
+            }
+            else if ((_randomNum >= 15 && _randomNum < 25) || (_randomNum >= 45 && _randomNum < 55) || (_randomNum >= 85 && _randomNum < 95))
+            {
+                return 1;
             }
             else if (_randomNum >= 10 && _randomNum < 15)
             {
                 return 2;
             }
-            else if (_randomNum >= 15 && _randomNum < 25)
-            {
-                return 1;
-            }
             else if (_randomNum >= 25 && _randomNum < 30)
             {
                 return 3;
             }
-            else if (_randomNum >= 30 && _randomNum < 40)
-            {
-                return 0;
-            }
             else if (_randomNum >= 40 && _randomNum < 45)
             {
                 return 4;
-            }
-            else if (_randomNum >= 45 && _randomNum < 55)
-            {
-                return 1;
-            }
-            else if (_randomNum >= 55 && _randomNum < 65)
-            {
-                return 0;
             }
             else if(_randomNum >= 65 && _randomNum < 70)
             {
@@ -150,10 +151,6 @@ public class MapGenerator : MonoBehaviour
             else if(_randomNum >= 80 && _randomNum < 85)
             {
                 return 8;
-            }
-            else if (_randomNum >= 85 && _randomNum < 95)
-            {
-                return 1;
             }
             else
             {
