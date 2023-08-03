@@ -55,5 +55,53 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d6252f7c02b6c8e4e9eed46681ccc1b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2047080037224188145}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d6252f7c02b6c8e4e9eed46681ccc1b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7966045483321948837}
   m_SourcePrefab: {fileID: 100100000, guid: d6252f7c02b6c8e4e9eed46681ccc1b1, type: 3}
+--- !u!1 &8632081670783613254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d6252f7c02b6c8e4e9eed46681ccc1b1, type: 3}
+  m_PrefabInstance: {fileID: 8865961877813494807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2047080037224188145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8632081670783613254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005ef316acf45c244b53dc1dadbc8611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseColor: {r: 0, g: 0, b: 0, a: 0}
+  _hoverColor: {r: 0, g: 0, b: 0, a: 0}
+  _meshRenderer: {fileID: 0}
+--- !u!64 &-7966045483321948837
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8632081670783613254}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 312217490582875807, guid: d6252f7c02b6c8e4e9eed46681ccc1b1, type: 3}
