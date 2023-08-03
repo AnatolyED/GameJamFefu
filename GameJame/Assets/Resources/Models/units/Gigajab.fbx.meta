@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d8d4436de07c75f4592ed332366063e0
+guid: 752eb2a50428a184a84347400b12fdb0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,53 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: crystals
-    second: {fileID: 2100000, guid: 61beb9d626e5fd84d8c4aa47200af03c, type: 2}
+      name: CrYsTals
+    second: {fileID: 2100000, guid: 161d7b0d8632b424583d64fc600f557d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ground
-    second: {fileID: 2100000, guid: 40f5d18073107854a9ecc573d9ff65f8, type: 2}
+      name: avarage(stone_skin)
+    second: {fileID: 2100000, guid: 557e34fbd1da0bb4eaadf0bb9d626e4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: belt
+    second: {fileID: 2100000, guid: 1052007e94b049d46b8295893338ce00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark_skin
+    second: {fileID: 2100000, guid: 09233f18d0b55234fa1bf04607ccab33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eyes
+    second: {fileID: 2100000, guid: 1574222df5ff4d247bf6cc9b99ff2598, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fangs
+    second: {fileID: 2100000, guid: dae95ff61f75fa44faf3b7e352cb11ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fists
+    second: {fileID: 2100000, guid: 6cf22a834c33f6b42a409e617a22ef8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light_skin
+    second: {fileID: 2100000, guid: 3fe4f50bab7201243816d39a081b1b1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: normal_skin
+    second: {fileID: 2100000, guid: f767075fe797d5e4d967a1f0b7ac1d4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trousers
+    second: {fileID: 2100000, guid: de42ab976fc819f4a8c51f346659f90d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
