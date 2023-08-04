@@ -8,6 +8,7 @@ public class MapGenerator : MonoBehaviour
 {
     [SerializeField, Header("Map configs")]
     private GameObject _gameMap;
+    [SerializeField] Transform _mainPoint;
     [SerializeField, Tooltip("Список координат объектов для генерации передвижения по карте")]
     private List<Transform> _mapObjectsTransform = new List<Transform>();
     [SerializeField, Tooltip("Список координат объектов для передвижения по карте")]
@@ -173,27 +174,21 @@ public class MapGenerator : MonoBehaviour
 
         for (int i = 0;i < _cellsNumFirstTeam.Count;i++)
         {
-            GameObject _unitSecondPlayer = Instantiate(_first._units[i],
-                _newMapObjectsTransform[_cellsNumFirstTeam[i]].GetComponent<Cell>().gameObject.transform.position,
-                Quaternion.Euler(_newMapObjectsTransform[_cellsNumFirstTeam[i]].GetComponent<Cell>().gameObject.transform.rotation.x,
-                0,
-                _newMapObjectsTransform[_cellsNumFirstTeam[i]].GetComponent<Cell>().gameObject.transform.rotation.z));
-
-            _unitSecondPlayer.GetComponent<Unit>().UnitCell = _newMapObjectsTransform[_cellsNumFirstTeam[i]].GetComponent<Cell>();
-            _unitSecondPlayer.GetComponent<Unit>().UnitCell.GetUnit = _first._units[i].GetComponent<Unit>();
-            _first._units[i] = _unitSecondPlayer;
+            GameObject _unitFirstPlayer = Instantiate(_first._units[i],
+                _newMapObjectsTransform[_cellsNumFirstTeam[i]].GetComponent<Cell>().gameObject.transform.position, Quaternion.Euler(0,180, 0));
+            _unitFirstPlayer.GetComponent<Unit>().UnitCell = _newMapObjectsTransform[_cellsNumFirstTeam[i]].GetComponent<Cell>();
+            _unitFirstPlayer.GetComponent<Unit>().UnitCell.GetUnit = _first._units[i].GetComponent<Unit>();
+            _unitFirstPlayer.GetComponent<Unit>().UnitTeam = PlayerMotion.First;
+            _first._units[i] = _unitFirstPlayer;
         }
         for (int i = 0; i < _cellsNumSecondTeam.Count; i++)
         {
-            GameObject _unitFirstPlayer = Instantiate(_second._units[i],
-                _newMapObjectsTransform[_cellsNumSecondTeam[i]].GetComponent<Cell>().gameObject.transform.position,
-                Quaternion.Euler(_newMapObjectsTransform[_cellsNumSecondTeam[i]].GetComponent<Cell>().gameObject.transform.rotation.x,
-                -180,
-                _newMapObjectsTransform[_cellsNumSecondTeam[i]].GetComponent<Cell>().gameObject.transform.rotation.z));
-
-            _unitFirstPlayer.GetComponent<Unit>().UnitCell = _newMapObjectsTransform[_cellsNumFirstTeam[i]].GetComponent<Cell>();
-            _unitFirstPlayer.GetComponent<Unit>().UnitCell.GetUnit = _second._units[i].GetComponent<Unit>();
-            _second._units[i] = _unitFirstPlayer;
+            GameObject _unitSecondPlayer = Instantiate(_second._units[i],
+                _newMapObjectsTransform[_cellsNumSecondTeam[i]].GetComponent<Cell>().gameObject.transform.position, Quaternion.Euler(0, -180, 0));
+            _unitSecondPlayer.GetComponent<Unit>().UnitCell = _newMapObjectsTransform[_cellsNumFirstTeam[i]].GetComponent<Cell>();
+            _unitSecondPlayer.GetComponent<Unit>().UnitCell.GetUnit = _second._units[i].GetComponent<Unit>();
+            _unitSecondPlayer.GetComponent<Unit>().UnitTeam = PlayerMotion.Second;
+            _second._units[i] = _unitSecondPlayer;
         }
     }
 }

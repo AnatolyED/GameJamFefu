@@ -217,6 +217,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4915167103001184862, guid: 0cb2bf10f50c4fb429dd3fb8787fc342, type: 3}
   m_PrefabInstance: {fileID: 1850210868}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &345958622 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2091666411638592583, guid: 0cb2bf10f50c4fb429dd3fb8787fc342, type: 3}
+  m_PrefabInstance: {fileID: 1850210868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &425526780 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8408003058975732369, guid: 0cb2bf10f50c4fb429dd3fb8787fc342, type: 3}
@@ -1399,6 +1404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameMap: {fileID: 1850211121}
+  _mainPoint: {fileID: 345958622}
   _mapObjectsTransform:
   - {fileID: 1850211120}
   - {fileID: 1850211119}
@@ -3046,7 +3052,7 @@ Transform:
   m_GameObject: {fileID: 1928542781}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 0, y: 20, z: -7.8}
+  m_LocalPosition: {x: 0, y: 16.48, z: -7.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
