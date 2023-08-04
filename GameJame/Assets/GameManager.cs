@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerMotion _gameMotion;
     [SerializeField] private Camera _camera;
 
+    [Header("Camera actions")]
+    [SerializeField] Transform _firstPos;
+    [SerializeField] Transform _secondPos;
+
+
     [Space]
     [SerializeField]private Transform _firstSelectedObject;
     [SerializeField]private Transform _secondSelectedObject;
@@ -38,24 +43,6 @@ public class GameManager : MonoBehaviour
         _gameMotion = PlayerMotion.First;
         StartCoroutine(SelectObjectRaycast());
     }
-    /*
-    private IEnumerator SelectObjectRaycast()
-    {
-        while (true)
-        {
-            if (Input.GetMouseButton(0))
-            {
-                Ray _ray = _camera.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(_ray, out RaycastHit hit, Mathf.Infinity))
-                {
-                    _firstSelectedObject = hit.collider.gameObject.transform;
-                }
-            }
-            yield return null;
-        }
-    }
-       */
-
     private IEnumerator SelectObjectRaycast()
     {
         while (true)
