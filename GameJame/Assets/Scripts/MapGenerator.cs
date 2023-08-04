@@ -176,6 +176,7 @@ public class MapGenerator : MonoBehaviour
         {
             GameObject _unitFirstPlayer = Instantiate(_first._units[i],
                 _newMapObjectsTransform[_cellsNumFirstTeam[i]].GetComponent<Cell>().gameObject.transform.position, Quaternion.Euler(0,180, 0));
+
             _unitFirstPlayer.GetComponent<Unit>().UnitCell = _newMapObjectsTransform[_cellsNumFirstTeam[i]].GetComponent<Cell>();
             _unitFirstPlayer.GetComponent<Unit>().UnitCell.GetUnit = _first._units[i].GetComponent<Unit>();
             _unitFirstPlayer.GetComponent<Unit>().UnitTeam = PlayerMotion.First;
@@ -185,6 +186,7 @@ public class MapGenerator : MonoBehaviour
         {
             GameObject _unitSecondPlayer = Instantiate(_second._units[i],
                 _newMapObjectsTransform[_cellsNumSecondTeam[i]].GetComponent<Cell>().gameObject.transform.position, Quaternion.Euler(0, -180, 0));
+
             _unitSecondPlayer.GetComponent<Unit>().UnitCell = _newMapObjectsTransform[_cellsNumFirstTeam[i]].GetComponent<Cell>();
             _unitSecondPlayer.GetComponent<Unit>().UnitCell.GetUnit = _second._units[i].GetComponent<Unit>();
             _unitSecondPlayer.GetComponent<Unit>().UnitTeam = PlayerMotion.Second;
