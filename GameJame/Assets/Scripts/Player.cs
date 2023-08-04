@@ -10,5 +10,6 @@ public class Player : MonoBehaviour
     [SerializeField] private int _id;
     */
     [SerializeField, Tooltip("Юниты игрока")] public List<GameObject> _units = new List<GameObject>(6);
+    [SerializeField] private GameObject _gameManager;
     [SerializeField] private PlayerMotion _motion;
 }
