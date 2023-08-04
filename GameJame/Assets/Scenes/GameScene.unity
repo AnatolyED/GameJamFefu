@@ -1615,6 +1615,7 @@ MonoBehaviour:
   - {fileID: 1850210871}
   - {fileID: 1850210870}
   - {fileID: 1850210869}
+  _newMapObjectsTransform: []
   _mapStopObjectsTransform:
   - {fileID: 425526780}
   - {fileID: 770202452}
@@ -1655,6 +1656,8 @@ MonoBehaviour:
   - {x: -90, y: 210, z: 0}
   - {x: -90, y: 270, z: 0}
   - {x: -90, y: 330, z: 0}
+  _first: {fileID: 1928542784}
+  _second: {fileID: 1928542783}
 --- !u!114 &1822233825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3062,7 +3065,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5404aa8724095904eb9d25d607f9559a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _units: []
+  _units:
+  - {fileID: 645823197352685983, guid: b8d5599eb50fa8c4899e02f125e2b967, type: 3}
+  - {fileID: 8461207188194832138, guid: ca87476c5d0e754428bf27a825af8ea2, type: 3}
+  - {fileID: 7025431170158952056, guid: 68b01ed2c0b57d24ea45b335311400d8, type: 3}
+  - {fileID: 5884176152077042070, guid: 6a16761abc7eb654ea09095da88b76f8, type: 3}
+  - {fileID: 5884176152077042070, guid: 6a16761abc7eb654ea09095da88b76f8, type: 3}
+  - {fileID: 5884176152077042070, guid: 6a16761abc7eb654ea09095da88b76f8, type: 3}
+  _gameManager: {fileID: 1822233821}
   _motion: 1
 --- !u!114 &1928542784
 MonoBehaviour:
@@ -3076,7 +3086,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5404aa8724095904eb9d25d607f9559a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _units: []
+  _units:
+  - {fileID: 798318696856398959, guid: 8c8f90c40c1e3724ab0a5cb0b7913633, type: 3}
+  - {fileID: 798318696856398959, guid: 8c8f90c40c1e3724ab0a5cb0b7913633, type: 3}
+  - {fileID: 1220357099689163348, guid: a08976ad8fb94894c849c8aca884aa44, type: 3}
+  - {fileID: 7548906946064188807, guid: f37bc5c58bd745440b42fba079de440f, type: 3}
+  - {fileID: 3696204429424306973, guid: 5dba9718b958a874b8b0c3e356ed4671, type: 3}
+  - {fileID: 1872846660905158954, guid: 8da9ad06f1d44f04c8e75f300580879c, type: 3}
+  _gameManager: {fileID: 1822233821}
   _motion: 0
 --- !u!1 &2072927569
 GameObject:
