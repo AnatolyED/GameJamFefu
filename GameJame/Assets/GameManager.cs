@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]private Transform _firstSelectedObject;
     [SerializeField]private Transform _secondSelectedObject;
     [SerializeField]private Action _action;
+    [SerializeField]privat
     public Player FirstPlayer
     {
         get { return _firstPlayer; }
@@ -70,7 +71,7 @@ public class GameManager : MonoBehaviour
                             else if (hit.collider.gameObject.GetComponent<Cell>().GetUnit != null && (_action == Action.Attack || _action == Action.RangeAttack || _action == Action.Skill))
                             {
                                 _secondSelectedObject = hit.collider.gameObject.transform;
-                                
+                                Activity(_action,_firstSelectedObject.gameObject,);
                             }
                         }
                         else if (hit.collider.gameObject.layer == 3 && hit.collider.gameObject.GetComponent<Unit>().UnitTeam == GameMotion && hit.collider.gameObject.GetComponent<Unit>().RightOfAway == true)
@@ -96,7 +97,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Battle(Action action)
+    private void Activity(Action action,GameObject _unit,int _scoreActivity)
     {
         switch (action)
         {
