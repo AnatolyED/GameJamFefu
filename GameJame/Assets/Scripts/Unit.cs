@@ -5,6 +5,7 @@ public abstract class Unit : MonoBehaviour, IDamageble
     [Header("Move Points")]
     [SerializeField, Tooltip("Значение кол-ва очков хода")] private int _motionPoints;
     [SerializeField, Tooltip("Кол-во клеток хода за единицу очков действия")] private int _speed;
+
     [Space,Header("Health Parameters")]
     [SerializeField,Tooltip("Здоровье юнита")] private float _health;
     
@@ -16,13 +17,15 @@ public abstract class Unit : MonoBehaviour, IDamageble
     [Space,Header("Protection parameters")]
     [SerializeField, Tooltip("Базовое значение защиты")] private float _baseArmor;
     [SerializeField, Tooltip("Коэффициент увеличения брони")] private float _armorMultiplier;
-    
-    [Space,Header("Special parameters")]
-    [SerializeField] private int _crit;
 
     [Space, Header("Information")]
     [SerializeField] private string _description;
 
+    [Space, Header("GamePlay parametrs")]
+    [SerializeField, Tooltip("Какому игроку пренадлежит юнит")] private PlayerMotion _unitMotion;
+    [SerializeField, Tooltip("Какое действие выбранно")] private Action _unitAction;
+    [SerializeField, Tooltip("Клетка на которой стоит")] private Cell _cell;
+    [SerializeField, Tooltip("Разрешение на ход")] private bool _rightOfWay = false;
 
     //Контроллер анимации
     Animator _anim;
@@ -30,14 +33,32 @@ public abstract class Unit : MonoBehaviour, IDamageble
     private void Start()
     {
         _anim = GetComponent<Animator>();
+        _unitAction = Action.None;
+    }
+    public bool RightOfAway
+    {
+        get { return _rightOfWay; }
+        set { _rightOfWay = value; }
+    }
+    public PlayerMotion UnitTeam
+    {
+        get { return _unitMotion; }
+        set { _unitMotion = value; }
+    }
+    public Action UnitAction
+    {
+        get { return _unitAction; }
+        set { _unitAction = value; }
+    }
+    public Cell UnitCell
+    {
+        get { return _cell; }
+        set { _cell = value; }
     }
     public int MotionPoints
     {
         get { return _motionPoints; }
-        set
-        {
-            _motionPoints = value;
-        }
+        set{ _motionPoints = value; }
     }
     public float Health
     {
