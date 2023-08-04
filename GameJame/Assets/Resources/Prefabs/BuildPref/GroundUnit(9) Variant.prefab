@@ -53,6 +53,10 @@ PrefabInstance:
       value: GroundUnit(9) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 54f3578aa8723a64d86d37cad2fd3a28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 54f3578aa8723a64d86d37cad2fd3a28, type: 3}
       propertyPath: m_TagString
       value: StoneBuildBlock
       objectReference: {fileID: 0}

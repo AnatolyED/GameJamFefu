@@ -7,10 +7,14 @@ public class Cell : MonoBehaviour
     [Header("Colors and materials")]
     [SerializeField] private MeshRenderer _meshRenderer;
     [SerializeField] private Color _baseColor;
-    
 
-    [Header("Unit")]
-    [SerializeField] public Unit _unitOnTheCell;
+    [Space,Header("Unit")]
+    [SerializeField] private Unit _unitOnTheCell;
+
+    public Unit GetUnit
+    {
+        get { return _unitOnTheCell; }
+    }
 
     private void Start()
     {
