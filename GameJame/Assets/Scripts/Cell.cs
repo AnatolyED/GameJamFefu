@@ -14,6 +14,7 @@ public class Cell : MonoBehaviour
     public Unit GetUnit
     {
         get { return _unitOnTheCell; }
+        set { _unitOnTheCell = value; }
     }
 
     private void Start()

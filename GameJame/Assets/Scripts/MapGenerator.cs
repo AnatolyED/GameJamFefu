@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField, Header("Map configs")]
     private GameObject _gameMap;
-    [SerializeField, Tooltip("Список координат объектов для передвижения по карте")]
+    [SerializeField, Tooltip("Список координат объектов для генерации передвижения по карте")]
     private List<Transform> _mapObjectsTransform = new List<Transform>();
+    [SerializeField, Tooltip("Список координат объектов для передвижения по карте")]
+    public List<Transform> _newMapObjectsTransform = new List<Transform>();
     [SerializeField, Tooltip("Список координат объектов для генерации блокирующих движение")]
     private List<Transform> _mapStopObjectsTransform = new List<Transform>(8);
     [SerializeField, Tooltip("Список префабов для генерации блоков передвижения")]
@@ -36,6 +39,9 @@ public class MapGenerator : MonoBehaviour
         new Vector3(-90, 270, 0),
         new Vector3(-90, 330, 0)
     };
+
+    [SerializeField] private Player _first;
+    [SerializeField] private Player _second;
     private void Start()
     {
         Creator();
@@ -49,14 +55,17 @@ public class MapGenerator : MonoBehaviour
     {
         int _randomPrefabNum;
         int _randomRotation;
-        for (int i = 0; i < _mapObjectsTransform.Count;i++)
+        for (int i = 0; i < _mapObjectsTransform.Count; i++)
         {
             _randomPrefabNum = Random.Range(0, _prefabsBuildMap.Count);
             _randomRotation = Random.Range(0, _deegresOfRotation.Count);
 
             GameObject _buildBlock = Instantiate(_prefabsBuildMap[_randomPrefabNum], _mapObjectsTransform[i].position, Quaternion.Euler(_deegresOfRotation[_randomRotation]), _gameMap.transform);
+            _newMapObjectsTransform.Add(_buildBlock.transform);
             Destroy(_mapObjectsTransform[i].gameObject);
         }
+        _mapObjectsTransform.Clear();
+        UnitsCreation();
     }
 
     private void CreatorStopBlocks()
@@ -76,7 +85,6 @@ public class MapGenerator : MonoBehaviour
                     _mapStopObjectsTransform[i].position.z),
                     Quaternion.Euler(_deegresOfRotationStop[_randomRotationStop]),
                     _gameMap.transform);
-
                 Destroy(_mapStopObjectsTransform[i].gameObject);
             }
             else if (_randomStopPrefab == 3)
@@ -156,6 +164,26 @@ public class MapGenerator : MonoBehaviour
             {
                 return 9;
             }
+        }
+    }
+    private void UnitsCreation()
+    {
+        int[] _cellsNumFirstTeam = new int[] { 58, 59, 62, 68, 71, 51 };
+        int[] _cellsNumSecondTeam = new int[] { 201, 133, 156, 134, 129 };
+
+        for (int i = 0;i < _cellsNumFirstTeam.Length;i++)
+        {
+            _first._units[i].GetComponent<Unit>().UnitCell = _newMapObjectsTransform[_cellsNumFirstTeam[i]].GetComponent<Cell>();
+            _first._units[i].GetComponent<Unit>().UnitCell.GetUnit = _first._units[i].GetComponent<Unit>();
+            GameObject _unit = Instantiate(_first._units[i],_first._units[i].GetComponent<Unit>().UnitCell.transform.position, Quaternion.Euler(_first._units[i].GetComponent<Unit>().UnitCell.transform.rotation.x, 0 , _second._units[i].GetComponent<Unit>().UnitCell.gameObject.transform.rotation.z));
+            _first._units[i] = _unit;
+        }
+        for (int i = 0; i < _cellsNumSecondTeam.Length; i++)
+        {
+            _second._units[i].GetComponent<Unit>().UnitCell = _newMapObjectsTransform[_cellsNumFirstTeam[i]].GetComponent<Cell>();
+            _second._units[i].GetComponent<Unit>().UnitCell.GetUnit = _second._units[i].GetComponent<Unit>();
+            GameObject _unit = Instantiate(_second._units[i], _second._units[i].GetComponent<Unit>().UnitCell.transform.position, Quaternion.Euler(_second._units[i].GetComponent<Unit>().UnitCell.transform.rotation.x, -180 , _second._units[i].GetComponent<Unit>().UnitCell.gameObject.transform.rotation.z));
+            _second._units[i] = _unit;
         }
     }
 }
